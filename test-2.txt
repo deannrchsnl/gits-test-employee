@@ -1,0 +1,37 @@
+
+import java.util.Arrays
+fun main() {
+	//data input
+    val nums: IntArray = intArrayOf(1,12,5,111,200,1000,10)
+    println("input : " + Arrays.toString(nums))
+
+	// Data is sorted by the smallest value
+    val avg = nums.sortedArray()
+
+	// the money that dad has
+    val uang = 50
+    println("uang yang di miliki ayah : " + uang)
+
+    var newArray = ArrayList<Int>()
+    var a = 0
+    var totalMainan = 0
+    for(i in avg){
+        if(a+i > uang){
+            break
+        }else{
+            a += i
+            totalMainan += 1
+            newArray.add(i)
+        }
+    }
+    var lastList = ArrayList<Int>()
+    for(i in nums){
+        for(a in newArray){
+            if(i == a){
+                lastList.add(i)
+            }
+        }
+    }
+    println("output : Sony dapat membeli " + totalMainan + " mainan dengan pilihan mainan $lastList")
+
+}

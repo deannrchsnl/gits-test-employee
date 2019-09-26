@@ -1,0 +1,30 @@
+
+import java.util.Arrays
+fun main() {
+	
+	// data input
+    val nums: IntArray = intArrayOf(10,20,20, 10, 10, 30, 50, 10, 202)
+    println("input : " + Arrays.toString(nums))
+	// data grouping
+    val avg = nums.distinct()
+    var totalsepasang = 0
+    var totalsatuan = 0
+
+	// count the number of socks based on color
+    for(i in avg){
+        var totalkaoskakisamawarna = 0
+        for(a in nums){
+            if(i == a){
+                totalkaoskakisamawarna += 1
+            }
+        }
+        if(totalkaoskakisamawarna % 2 == 0){
+            totalsepasang += totalkaoskakisamawarna/2
+        }else{
+            var b = totalkaoskakisamawarna-1
+            totalsepasang += b/2
+            totalsatuan += 1
+        }
+    }
+    println("output : Total ada " + totalsepasang + " pasang kaus kaki, dan ada "+ totalsatuan+" kaus kaki yang tidak memiliki pasangannya")
+}
